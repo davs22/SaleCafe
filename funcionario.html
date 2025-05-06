@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaleCafe - Painel do Funcionário</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="funcionario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SaleCafe</h1>
+                <p>Painel do Funcionário</p>
+            </div>
+            <nav>
+                <button id="menu-toggle" class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="menu-list">
+                    <li><a href="#" class="active" data-section="pedidos">Pedidos</a></li>
+                    <li><a href="#" data-section="estoque">Estoque</a></li>
+                    <li><a href="#" data-section="historico">Histórico</a></li>
+                    <li><a href="index.html">Voltar ao Site</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span id="funcionario-nome">Funcionário</span>
+                <button id="logout-button" class="logout-button">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="login-overlay" class="login-overlay">
+        <div class="login-container">
+            <h2>Login de Funcionário</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" placeholder="Digite seu usuário" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <main class="dashboard-container">
+        <!-- Seção de Pedidos Pendentes -->
+        <section id="pedidos-section" class="dashboard-section active">
+            <div class="container">
+                <h2 class="section-title">Pedidos Pendentes</h2>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="search-container">
+                            <input type="text" id="search-pedidos" placeholder="Buscar pedido...">
+                            <button id="search-pedidos-button"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="filter-container">
+                            <select id="filter-status">
+                                <option value="todos">Todos os Status</option>
+                                <option value="pendente">Pendente</option>
+                                <option value="preparando">Preparando</option>
+                                <option value="pronto">Pronto para Entrega</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Itens</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Horário</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pedidos-table-body">
+                                <!-- Pedidos serão inseridos aqui via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Gerenciamento de Estoque -->
+        <section id="estoque-section" class="dashboard-section">
+            <div class="container">
+                <h2 class="section-title">Gerenciamento de Estoque</h2>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="search-container">
+                            <input type="text" id="search-estoque" placeholder="Buscar produto...">
+                            <button id="search-estoque-button"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="filter-container">
+                            <select id="filter-categoria">
+                                <option value="todos">Todas as Categorias</option>
+                                <option value="bebidas">Bebidas</option>
+                                <option value="salgados">Salgados</option>
+                                <option value="sobremesas">Sobremesas</option>
+                                <option value="vitaminas">Vitaminas</option>
+                            </select>
+                        </div>
+                        <button id="add-produto-btn" class="btn btn-sm">
+                            <i class="fas fa-plus"></i> Novo Produto
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Imagem</th>
+                                    <th>Nome</th>
+                                    <th>Categoria</th>
+                                    <th>Preço</th>
+                                    <th>Estoque</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="estoque-table-body">
+                                <!-- Produtos serão inseridos aqui via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Histórico de Pedidos -->
+        <section id="historico-section" class="dashboard-section">
+            <div class="container">
+                <h2 class="section-title">Histórico de Pedidos</h2>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="search-container">
+                            <input type="text" id="search-historico" placeholder="Buscar pedido...">
+                            <button id="search-historico-button"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="filter-container">
+                            <div class="date-filter">
+                                <label for="date-from">De:</label>
+                                <input type="date" id="date-from">
+                                <label for="date-to">Até:</label>
+                                <input type="date" id="date-to">
+                                <button id="apply-date-filter" class="btn btn-sm">Aplicar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Itens</th>
+                                    <th>Total</th>
+                                    <th>Data</th>
+                                    <th>Horário</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historico-table-body">
+                                <!-- Histórico de pedidos será inserido aqui via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para Detalhes do Pedido -->
+    <div id="pedido-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Detalhes do Pedido #<span id="pedido-id"></span></h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="pedido-info">
+                    <div class="info-group">
+                        <span class="info-label">Cliente:</span>
+                        <span id="pedido-cliente"></span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Data:</span>
+                        <span id="pedido-data"></span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Status:</span>
+                        <span id="pedido-status" class="status-badge"></span>
+                    </div>
+                </div>
+                <div class="pedido-items">
+                    <h4>Itens do Pedido</h4>
+                    <table class="items-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantidade</th>
+                                <th>Preço Unit.</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pedido-items-body">
+                            <!-- Itens do pedido serão inseridos aqui -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pedido-total">
+                    <span class="total-label">Total:</span>
+                    <span id="pedido-total" class="total-value"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="status-actions">
+                    <select id="update-status">
+                        <option value="pendente">Pendente</option>
+                        <option value="preparando">Preparando</option>
+                        <option value="pronto">Pronto para Entrega</option>
+                        <option value="entregue">Entregue</option>
+                        <option value="cancelado">Cancelado</option>
+                    </select>
+                    <button id="save-status" class="btn">Atualizar Status</button>
+                </div>
+                <button id="mark-delivered" class="btn btn-success">
+                    <i class="fas fa-check"></i> Marcar como Entregue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Editar Estoque -->
+    <div id="estoque-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Atualizar Estoque - <span id="produto-nome"></span></h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="estoque-form">
+                    <input type="hidden" id="produto-id">
+                    <div class="form-group">
+                        <label for="produto-quantidade">Quantidade Atual:</label>
+                        <input type="number" id="produto-quantidade" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adicionar-quantidade">Adicionar ao Estoque:</label>
+                        <input type="number" id="adicionar-quantidade" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="produto-preco">Preço (R$):</label>
+                        <input type="number" id="produto-preco" min="0" step="0.01" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="save-estoque" class="btn">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Adicionar Novo Produto -->
+    <div id="novo-produto-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Adicionar Novo Produto</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="novo-produto-form">
+                    <div class="form-group">
+                        <label for="novo-nome">Nome do Produto:</label>
+                        <input type="text" id="novo-nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="novo-descricao">Descrição:</label>
+                        <textarea id="novo-descricao" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="novo-categoria">Categoria:</label>
+                        <select id="novo-categoria" required>
+                            <option value="bebidas">Bebidas</option>
+                            <option value="salgados">Salgados</option>
+                            <option value="sobremesas">Sobremesas</option>
+                            <option value="vitaminas">Vitaminas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="novo-preco">Preço (R$):</label>
+                        <input type="number" id="novo-preco" min="0" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="novo-estoque">Quantidade em Estoque:</label>
+                        <input type="number" id="novo-estoque" min="0" value="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="novo-imagem">URL da Imagem:</label>
+                        <input type="url" id="novo-imagem" placeholder="https://exemplo.com/imagem.jpg" required>
+                        <div class="image-preview" id="image-preview">
+                            <img src="https://via.placeholder.com/150" alt="Preview" id="preview-img">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="save-novo-produto" class="btn">Adicionar Produto</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay"></div>
+
+    <script src="funcionario.js"></script>
+</body>
+</html>
