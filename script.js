@@ -516,4 +516,19 @@ const menuItems = [
     document.getElementById("cart-overlay").addEventListener("click", closeCart)
     document.getElementById("checkout-button").addEventListener("click", checkout)
   })
-  
+  // Adicione este código ao seu script.js existente
+document.addEventListener("DOMContentLoaded", function() {
+    // Selecionar o botão "Finalizar Compra" do carrinho
+    const checkoutButton = document.getElementById('checkout-button');
+    
+    // Verificar se o botão existe na página
+    if (checkoutButton) {
+        // Adicionar o event listener para o clique
+        checkoutButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Redirecionar para a página de pagamento PIX
+            window.location.href = 'pagamento.html';
+        });
+    }
+});

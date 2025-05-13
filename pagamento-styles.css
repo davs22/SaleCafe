@@ -1,0 +1,234 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container principal */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Card */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #16a34a;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-description {
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  border-top: 1px solid #eee;
+}
+
+/* Formulário */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+}
+
+/* Botões */
+.btn-primary {
+  display: inline-block;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #15803d;
+}
+
+.btn-primary:disabled {
+  background-color: #94d3a2;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #16a34a;
+  border: 1px solid #16a34a;
+  border-radius: 4px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.btn-outline:hover {
+  background-color: rgba(22, 163, 74, 0.1);
+}
+
+/* Código PIX */
+.pix-code-container {
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pix-code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.pix-code {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 0.7rem;
+  word-break: break-all;
+  font-family: monospace;
+}
+
+/* QR Code */
+.qr-code-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.qr-code {
+  border: 4px solid #16a34a;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.qr-code-text {
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Ícone de sucesso */
+.success-icon {
+  margin-bottom: 1.5rem;
+}
+
+.success-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Detalhes do pedido */
+.order-details {
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  margin-bottom: 0.75rem;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.detail-value {
+  font-weight: 500;
+}
+
+.detail-value.success {
+  color: #16a34a;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .btn-primary {
+    padding: 0.75rem 1rem;
+  }
+}

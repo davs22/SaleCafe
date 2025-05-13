@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Confirmado - Café Sale</title>
+    <link rel="stylesheet" href="pagamento-styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">Pagamento Confirmado</h1>
+                <p class="card-description">Obrigado pela sua compra!</p>
+            </div>
+            <div class="card-content center">
+                <div class="success-icon">
+                    <svg width="96" height="96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#16a34a" stroke-width="2"/>
+                        <path d="M8 12L11 15L16 9" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                
+                <h2 class="success-title">Pagamento PIX recebido com sucesso!</h2>
+                
+                <div class="order-details">
+                    <div class="detail-item">
+                        <p class="detail-label">Cliente:</p>
+                        <p class="detail-value" id="cliente-nome">-</p>
+                    </div>
+                    <div class="detail-item">
+                        <p class="detail-label">Número do Pedido:</p>
+                        <p class="detail-value" id="pedido-id">-</p>
+                    </div>
+                    <div class="detail-item">
+                        <p class="detail-label">Status:</p>
+                        <p class="detail-value success">Pagamento aprovado</p>
+                    </div>
+                    <div class="detail-item">
+                        <p class="detail-label">Data:</p>
+                        <p class="detail-value" id="data-pedido">-</p>
+                    </div>
+                </div>
+                
+                <a href="index.html" class="btn-primary">Voltar para a Loja</a>
+            </div>
+            <div class="card-footer">
+                <p>Café Sale - Obrigado pela preferência</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="confirmacao-script.js"></script>
+</body>
+</html>
