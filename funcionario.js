@@ -770,3 +770,22 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPedidosTable(getPedidosHistorico(), "historico-table-body")
   renderEstoqueTable(produtos)
 })
+
+
+   const modal = document.getElementById("statusMOdal");
+   const btn = document.getElementById("opneModalBtn");
+   const closeBtn = document.querySelector(".close");
+
+   btn.onclick = function (){
+      modal.style.display = "block";
+     };
+
+     closeBtn.onclick = function () {
+      modal.style.display ="none";
+     };
+
+     window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
