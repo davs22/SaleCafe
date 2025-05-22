@@ -85,7 +85,14 @@
                                     <th>Total</th>
                                     <th>Status</th>
                                     <th>Horário</th>
-                                    <th>Ações</th>
+                                    <th>
+                                        <button id="openModal-btn" class="ações-btn">Ações</button>
+                                    </th>
+                                    <div id="açõesModa" class="Modal">
+                                     <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                     </div>
+                                    </div>
                                 </tr>
                             </thead>
                             <tbody id="pedidos-table-body">
@@ -130,7 +137,14 @@
                                     <th>Categoria</th>
                                     <th>Preço</th>
                                     <th>Estoque</th>
-                                    <th>Ações</th>
+                                    <th>
+                                        <button id="openModal-btn" class="ações-btn">Ações</button>
+                                    </th>
+                                     <div id="açõesModa" class="Modal">
+                                     <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                     </div>
+                                    </div>
                                 </tr>
                             </thead>
                             <tbody id="estoque-table-body">
@@ -172,15 +186,15 @@
                                     <th>Total</th>
                                     <th>Data</th>
                                     <th>Horário</th>
+                                    <!--Modal e botão de Histórico, fará interatividade com JavaScript e CSS-->
                                     <th>
-                                        <button id="openModal-btn" class="status-btn">Vizualizar</button>
+                                        <button id="openModal-btn" class="status-btn">Status</button>
                                     </th>
-                                    <div id="statusMOdal" class="Modal">
+                                    <div id="statusModal" class="Modal">
                                      <div class="modal-content">
                                         <span class="close">&times;</span>
                                      </div>
                                     </div>
-
                                 </tr>
                             </thead>
                             <tbody id="historico-table-body">
