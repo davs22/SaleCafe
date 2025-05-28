@@ -770,12 +770,12 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPedidosTable(getPedidosHistorico(), "historico-table-body")
   renderEstoqueTable(produtos)
 })
-
-
-   const modal = document.getElementById("statusMOdal");
-   const btn = document.getElementById("opneModalBtn");
+   // Apertar o botão visualizar mostra um modal-histórico e modal-pedido
+   window.onload = function() { 
+   const modal = document.getElementById("statusModal");
+   const btn = document.getElementById("openModalBtn");
    const closeBtn = document.querySelector(".close");
-
+    
    btn.onclick = function (){
       modal.style.display = "block";
      };
@@ -787,5 +787,6 @@ document.addEventListener("DOMContentLoaded", () => {
      window.onclick = function (event) {
       if (event.target === modal) {
         modal.style.display = "none";
-    }
-};
+      }
+    } 
+  }
