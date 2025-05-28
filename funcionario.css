@@ -477,4 +477,44 @@
       margin-bottom: 10px;
     }
   }
-  
+    /* Fundo escuro do modal */
+    .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* fundo preto com opacidade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    }
+
+    /* Conteúdo do modal (quadro branco) */
+    .modal-content .status-pronto {
+    background-color: #ffffff; /* branco */
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-content .status-pendente {
+    background-color: #ffffff; 
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-content .status-preparando {
+    background-color: #ffffff; 
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
