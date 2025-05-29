@@ -91,7 +91,11 @@
                                     </th>
                                     <div id="açõesModa" class="Modal">
                                      <div class="modal-content">
+                                      <div class="modal-overlay" id="modal">
+                                       <div class="modal-content">
                                         <span class="close">&times;</span>
+                                       </div> 
+                                      </div>
                                      </div>
                                     </div>
                                 </tr>
@@ -189,11 +193,11 @@
                                     <th>Horário</th>
                                     <!--Modal e botão de Histórico, fará interatividade com JavaScript e CSS-->
                                     <th>
-                                        <button id="openModal-btn" class="status-btn">Status</button>
+                                        <button onclick="AbrirModal()">Abrir</button>
                                     </th>
                                     <div id="statusModal" class="Modal">
-                                     <div class="modal-content">
-                                        <span class="close">&times;</span>
+                                     <div class="conteudo" on.click>
+                                        <button onclick="fecharModal()">Fechar</button>
                                      </div>
                                     </div>
                                 </tr>
@@ -202,6 +206,54 @@
                                 <!-- Histórico de pedidos será inserido aqui via JavaScript -->
                             </tbody>
                         </table>
+                         <section id="historico-section" class="dashboard-section">
+            <div class="container">
+                <h2 class="section-title">Histórico de Pedidos</h2>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="search-container">
+                            <input type="text" id="search-historico" placeholder="Buscar pedido...">
+                            <button id="search-historico-button"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="filter-container">
+                            <div class="date-filter">
+                                <label for="date-from">De:</label>
+                                <input type="date" id="date-from">
+                                <label for="date-to">Até:</label>
+                                <input type="date" id="date-to">
+                                <button id="apply-date-filter" class="btn btn-sm">Aplicar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Itens</th>
+                                    <th>Total</th>
+                                    <th>Data</th>
+                                    <th>Horário</th>
+                                    <!--Modal e botão de Histórico, fará interatividade com JavaScript e CSS-->
+                                    <th>
+                                        <button onclick="AbrirModal()">Abrir</button>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="historico-table-body">
+                                <!-- Histórico de pedidos será inserido aqui via JavaScript -->
+                            </tbody>
+                        </table>
+                      <div id="statusModal" class="Modal">
+                       <div class="conteudo" on.click>
+                         <button onclick="fecharModal()">Fechar</button>
+                       </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
                     </div>
                 </div>
             </div>
