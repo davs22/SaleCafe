@@ -771,22 +771,11 @@ document.addEventListener("DOMContentLoaded", () => {
   renderEstoqueTable(produtos)
 })
    // Apertar o botão visualizar mostra um modal-histórico e modal-pedido
-   window.onload = function() { 
-   const modal = document.getElementById("statusModal");
-   const btn = document.getElementById("openModalBtn");
-   const closeBtn = document.querySelector(".close");
-    
-   btn.onclick = function (){
-      modal.style.display = "block";
-     };
+    function abrirModal() {
+      document.getElementById("modal").style.display = "block";
+    }
 
-     closeBtn.onclick = function () {
-      modal.style.display ="none";
-     };
-
-     window.onclick = function (event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    } 
-  }
+    function fecharModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  
