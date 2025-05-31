@@ -57,57 +57,7 @@
 
     <main class="dashboard-container">
         <!-- Seção de Pedidos Pendentes -->
-        <section id="pedidos-section" class="dashboard-section active">
-            <div class="container">
-                <h2 class="section-title">Pedidos Pendentes</h2>
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <div class="search-container">
-                            <input type="text" id="search-pedidos" placeholder="Buscar pedido...">
-                            <button id="search-pedidos-button"><i class="fas fa-search"></i></button>
-                        </div>
-                        <div class="filter-container">
-                            <select id="filter-status">
-                                <option value="todos">Todos os Status</option>
-                                <option value="pendente">Pendente</option>
-                                <option value="preparando">Preparando</option>
-                                <option value="pronto">Pronto para Entrega</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Cliente</th>
-                                    <th>Itens</th>
-                                    <th>Total</th>
-                                    <th>Status</th>
-                                    <th>Horário</th>
-                                    <th>
-                                        <!-- Modal de Histórico de Pedidos -->
-                                        <button id="openModalbtn" class="açõesbtn">Ações</button>
-                                    </th>
-                                    <div id="açõesModa" class="Modal">
-                                     <div class="modal-content">
-                                      <div class="modal-overlay" id="modal">
-                                       <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                       </div> 
-                                      </div>
-                                     </div>
-                                    </div>
-                                </tr>
-                            </thead>
-                            <tbody id="pedidos-table-body">
-                                <!-- Pedidos serão inseridos aqui via JavaScript -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
+        c
 
         <!-- Seção de Gerenciamento de Estoque -->
         <section id="estoque-section" class="dashboard-section">
@@ -145,17 +95,16 @@
                                     <th>
                                         <button id="openModal-btn" class="ações-btn">Ações</button>
                                     </th>
-                                     <div id="açõesModa" class="Modal">
-                                     <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                     </div>
-                                    </div>
-                                </tr>
                             </thead>
                             <tbody id="estoque-table-body">
                                 <!-- Produtos serão inseridos aqui via JavaScript -->
                             </tbody>
                         </table>
+                         <div id="açõesModa" class="Modal">
+                          <div class="modal-content">
+                            <span class="close">&times;</span>
+                          </div>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -192,68 +141,23 @@
                                     <th>Data</th>
                                     <th>Horário</th>
                                     <!--Modal e botão de Histórico, fará interatividade com JavaScript e CSS-->
-                                    <th>
-                                        <button onclick="AbrirModal()">Abrir</button>
-                                    </th>
-                                    <div id="statusModal" class="Modal">
-                                     <div class="conteudo" on.click>
-                                        <button onclick="fecharModal()">Fechar</button>
-                                     </div>
-                                    </div>
+                                    <th><button onclick="AbrirModal()">Status</button></th>
                                 </tr>
                             </thead>
                             <tbody id="historico-table-body">
-                                <!-- Histórico de pedidos será inserido aqui via JavaScript -->
-                            </tbody>
-                        </table>
-                         <section id="historico-section" class="dashboard-section">
-            <div class="container">
-                <h2 class="section-title">Histórico de Pedidos</h2>
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <div class="search-container">
-                            <input type="text" id="search-historico" placeholder="Buscar pedido...">
-                            <button id="search-historico-button"><i class="fas fa-search"></i></button>
-                        </div>
-                        <div class="filter-container">
-                            <div class="date-filter">
-                                <label for="date-from">De:</label>
-                                <input type="date" id="date-from">
-                                <label for="date-to">Até:</label>
-                                <input type="date" id="date-to">
-                                <button id="apply-date-filter" class="btn btn-sm">Aplicar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Cliente</th>
-                                    <th>Itens</th>
-                                    <th>Total</th>
-                                    <th>Data</th>
-                                    <th>Horário</th>
-                                    <!--Modal e botão de Histórico, fará interatividade com JavaScript e CSS-->
-                                    <th>
-                                        <button onclick="AbrirModal()">Abrir</button>
-                                    </th>
+
                                 </tr>
-                            </thead>
-                            <tbody id="historico-table-body">
                                 <!-- Histórico de pedidos será inserido aqui via JavaScript -->
                             </tbody>
                         </table>
+                    </div>    
+                     </div>   
                       <div id="statusModal" class="Modal">
-                       <div class="conteudo" on.click>
+                       <div class="conteudo" onclick>
                          <button onclick="fecharModal()">Fechar</button>
                        </div>
                       </div>
-                    </div>
-                </div>
-            </div>
-        </section>
                     </div>
                 </div>
             </div>
