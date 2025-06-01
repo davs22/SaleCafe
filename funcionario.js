@@ -772,10 +772,10 @@ document.addEventListener("DOMContentLoaded", () => {
 })
    // Apertar o botão visualizar mostra um modal-histórico e modal-pedido
     function abrirModal() {
-      document.getElementById("modal").style.display = "block";
+      document.getElementById("detalhes-modal").style.display = "block";
     }
 
     function fecharModal() {
-      document.getElementById("modal").style.display = "none";
+      document.getElementById("detalhes-modal").style.display = "none";
     }
   
