@@ -1364,7 +1364,7 @@
   }
   
   .disabled {
-    opacity: 0.6;
+    opacity: o.6;
     cursor: not-allowed !important;
   }
   
