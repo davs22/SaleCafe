@@ -1166,6 +1166,7 @@
   .menu-item {
     opacity: 1;
     animation: fadeIn 0.6s ease forwards;
+    background-color: #dee2e5;
   }
   
   .menu-item:nth-child(2) {
@@ -1335,8 +1336,9 @@
   }
   
   .notification.hide {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(-10px);
+    background-color: #dee2e5;
   }
   
   /* Estilos específicos para o funcionário */
