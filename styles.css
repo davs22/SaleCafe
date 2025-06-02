@@ -1162,7 +1162,7 @@
   }
   
   .menu-item {
-    opacity: 0;
+    opacity: 1;
     animation: fadeIn 0.6s ease forwards;
   }
   
