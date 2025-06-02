@@ -1154,10 +1154,12 @@
     from {
       opacity: 1;
       transform: translateY(30px);
+      background-color: #dee2e5;
     }
     to {
       opacity: 1;
       transform: translateY(0);
+      background-color: #dee2e5;
     }
   }
   
